@@ -34,6 +34,7 @@ const bingo = () => {
       mainMenu();
     }
   };
+
   const mainMenu = () => {
     console.clear();
     const mainOptions = prompt(
@@ -53,6 +54,7 @@ const bingo = () => {
       );
       mainMenu();
     }
+
     switch (mainOptions) {
       case "1":
         play();
@@ -66,16 +68,19 @@ const bingo = () => {
       case null:
         resetOperations();
         break;
+      default:
+        console.log("error");
     }
   };
+
   const play = () => {
     let card = [[], [], []];
-    let bombo = [];
+    const bombo = [];
 
     const cardNumbers = () => {
       let totalNumbers = 0;
       do {
-        let numberCard = Math.floor(Math.random() * 91);
+        const numberCard = Math.floor(Math.random() * 91);
 
         if (
           !card[0].includes(numberCard) &&
@@ -93,10 +98,14 @@ const bingo = () => {
             case totalNumbers >= 10:
               card[2].push(numberCard);
               break;
+            default:
+              console.log("error");
           }
+
           totalNumbers++;
         }
       } while (totalNumbers < 15);
+
       console.log(`
       |‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾|
       |          CARTON          |
@@ -135,7 +144,9 @@ const bingo = () => {
           );
           line = true;
           return;
-        } else if (lineCounter.every((elem) => elem === 5)) {
+        }
+
+        if (lineCounter.every((elem) => elem === 5)) {
           console.clear();
           console.log(
             "\n+++++++++++++++++++++++   BINGO   ++++++++++++++++++++++++++"
@@ -143,12 +154,13 @@ const bingo = () => {
           bingo = true;
           return;
         }
+
         console.clear();
       };
 
       for (i = 0; bombo.length < 90; i++) {
         if (bingo) {
-          let turnsNumber = bombo.length;
+          const turnsNumber = bombo.length;
           user.points = (90 - turnsNumber) * 100;
           console.log(
             `\nFelicidades! Tienes ${user.points} puntos, aconseguido en ${turnsNumber} turnos.\n`
@@ -158,7 +170,7 @@ const bingo = () => {
           return;
         }
 
-        let numberBombo = Math.floor(Math.random() * 91);
+        const numberBombo = Math.floor(Math.random() * 91);
         if (!bombo.includes(numberBombo) && numberBombo !== 0) {
           const getNextNumber = confirm(
             `Ha salido el  * ${numberBombo} *\n[ Presione OK para sacar el siguiente número. ]`
@@ -167,6 +179,7 @@ const bingo = () => {
             resetOperations();
             return;
           }
+
           bombo.push(numberBombo);
 
           for (let j = 0; j < card.length; j++) {
@@ -194,6 +207,7 @@ const bingo = () => {
         }
       }
     };
+
     cardNumbers();
   };
 
@@ -234,7 +248,6 @@ const bingo = () => {
       userData();
     } else {
       resetOperations();
-      return;
     }
   };
 
@@ -244,9 +257,9 @@ const bingo = () => {
       mainMenu();
     } else {
       console.log("Bingo Game closed ");
-      return;
     }
   };
+
   userData();
 };
 
