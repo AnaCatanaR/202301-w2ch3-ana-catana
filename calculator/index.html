@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> ·calculator·</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script src="main.js" defer></script>
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&family=Poiret+One&family=Roboto+Mono:wght@200&display=swap" rel="stylesheet">
+        <link rel="javascript" rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="icon" type="image/x-icon" href="https://cdn2.iconfinder.com/data/icons/ios7-inspired-mac-icon-set/512/Calculator_512.png">
+</head>
+<body>
+    <div class="container">
+        <div class="calculator">            
+            <div class="buttons">
+                <div id="display">
+                    <div class ="display-container">
+                        <div id="previousDisplay" class="display-container_previous-result"></div>
+                        <div id="operatorDisplay" class="display-container_operator"></div>              
+                        <div id="introNumberDisplay" class="display-container_actual-result"></div>              
+                    </div>
+                </div>
+                <span class="clear">C</span>
+                <span class="squareRoot">√</span>
+                <span class="division" onclick="getOperator('/')">/</span>
+                <span class="multiplication" onclick="getOperator('*')">x</span>
+                <span class="number" onclick="getNumbers(7)">7</span>
+                <span class="number" onclick="getNumbers(8)">8</span>
+                <span class="number" onclick="getNumbers(9)">9</span>
+                <span class="substraction" onclick="getOperator('-')">-</span>
+                <span class="number" onclick="getNumbers(4)">4</span>
+                <span class="number" onclick="getNumbers(5)">5</span>
+                <span class="number" onclick="getNumbers(6)">6</span>
+                <span class="addition" onclick="getOperator('+')">+</span>
+                <span class="number" onclick="getNumbers(1)">1</span>
+                <span class="number" onclick="getNumbers(2)">2</span>
+                <span class="number" onclick="getNumbers(3)">3</span>
+                <span class="zero" onclick="getNumbers(0)">0</span>
+                <span class="number" onclick="getNumbers('.')">·</span>
+                <span class="equal" onclick="memoNumber('=')">=</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
